@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: white;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-principal {
+    background-color: #f7f1f1;
+    width: 90%; /* Ajuste a largura para 90% */
+    max-width: 1200px; /* Largura máxima */
+    text-align: center;
+    margin: 20px auto; /* Adicione margens em torno do container */
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar img {
+    height: 70px;
+    width: auto;
+    padding: 5px;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 10px;
+}
+
+.produtos {
+    margin: 0 auto;
+}
+
+.produtos ul {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+}
+
+.produtos img {
+    height: 150px;
+    width: 170px;
+}
+
+.produtos li {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.3s;
+    flex: 1 1 200px; /* Flexível, permitindo que os itens se ajustem */
+    max-width: 250px; /* Largura máxima dos itens */
+}
+
+li:hover {
+    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
+}
+
+.carousel {
+    width: 500px; /* Largura inicial */
+    margin: 0 auto;
+    margin-top: 20px; /* Espaço acima do carousel */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para ocultar partes que saem dos limites */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.carousel-inner img {
+    height: 250px; /* Ajuste a altura desejada */
+    object-fit: contain; /* Cobre o espaço sem distorcer */
+    transition: transform 0.5s ease; /* Transição suave */
+    width: 100%; /* Alinhado para ocupar 100% do container */
+}
+
+.carousel-item {
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo para os ícones */
+    border-radius: 50%; /* Ícones arredondados */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+footer p {
+    font-size: 10px;
+}
+
+.title {
+    color: #c51967;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-principal {
+        width: 95%; /* Largura maior em telas pequenas */
+    }
+
+    .carousel {
+        width: 90%; /* Ajusta a largura do carousel */
+    }
+
+    .produtos img {
+        height: 120px; /* Imagens menores em telas pequenas */
+        width: 140px;
+    }
+
+    .produtos li {
+        max-width: 180px; /* Largura máxima dos itens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Itens da lista em coluna */
+        gap: 10px; /* Espaço menor entre os itens */
+    }
+
+    .carousel {
+        width: 100%; /* Ajusta para ocupar toda a largura em telas pequenas */
+    }
+
+    .produtos img {
+        height: 100px; /* Imagens ainda menores */
+        width: 120px;
+    }
+}
