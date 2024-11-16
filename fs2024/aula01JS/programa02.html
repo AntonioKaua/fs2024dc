@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JavaScript</title>
+</head>
+<body>
+    
+    <script>
+        // Solicita os números ao usuário
+        var numero1 = parseInt(prompt("Digite o primeiro número:"));
+        var numero2 = parseInt(prompt("Digite o segundo número:"));
+        
+        // Solicita a operação
+        var operacao = prompt("Selecione a operação:\nDigite 'adicao', 'subtracao', 'multiplicacao', 'divisao' ou 'mod':");
+
+        // Variáveis para armazenar os resultados
+        var resultado;
+
+        // Realiza a operação de acordo com a escolha do usuário
+        switch(operacao.toLowerCase()) {
+            case "adicao":
+                resultado = numero1 + numero2;
+                break;
+            case "subtracao":
+                resultado = numero1 - numero2;
+                break;
+            case "multiplicacao":
+                resultado = numero1 * numero2;
+                break;
+            case "divisao":
+                if (numero2 !== 0) {
+                    resultado = numero1 / numero2;
+                } else {
+                    resultado = "Não é possível dividir por zero!";
+                }
+                break;
+            case "mod":
+                resultado = numero1 % numero2;
+                break;
+            default:
+                resultado = "Operação inválida!";
+                break;
+        }
+
+        // Exibe o resultado
+        document.write("Resultado: " + resultado);
+        console.log("Resultado: " + resultado);
+    </script>
+
+</body>
+</html>

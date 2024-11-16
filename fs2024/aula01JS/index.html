@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selecione seu gênero</h1>
+    <form id="form">
+        <label for="homem">Homem</label>
+        <input type="radio" name="genero" id="homem" value="homem">
+        <label for="mulher">Mulher</label>
+        <input type="radio" name="genero" id="mulher" value="mulher">
+        <input type="button" value="Submit" id="submitButton">
+    </form>
+
+    <script>
+        // Captura o botão de submit
+        const submitButton = document.getElementById("submitButton");
+
+        // Função para verificar o gênero selecionado
+        submitButton.addEventListener("click", function() {
+            // Captura todos os radio buttons com o nome "genero"
+            const generoSelecionado = document.querySelector('input[name="genero"]:checked');
+
+            if (generoSelecionado) {
+                // Verifica o valor do gênero selecionado
+                if (generoSelecionado.value === "homem") {
+                    document.write("Bom dia, rapaz");
+                } else {
+                    document.write("Bom dia, garota");
+                }
+            } else {
+                alert("Por favor, selecione um gênero.");
+            }
+        });
+    </script>
+</body>
+</html>
