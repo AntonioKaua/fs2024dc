@@ -9,12 +9,24 @@
     <script>
         var usuario = prompt("Digite seu nome")
         var altura = Number(prompt("Olá, "+usuario+", digite sua altura em metros:"));
-        altura = altura*2;
         var peso = Number(prompt("Digite o seu peso:"));
 
-        var imc = peso/altura
+        var imc = peso/(altura*altura)
 
-        document.write("Processo completo senhor(a) "+usuario+", seu imc é de: "+imc+".")
+        if(imc <= 18.5){
+            categoria = "Abaixo do peso."
+        }else if(imc >= 18.5 && imc <= 24.9 ){
+            categoria = "Peso ideal."
+        }else if(imc >= 25 && imc <= 29.9){
+            categoria = "Sobrepeso."
+        }else if(imc >= 30 && imc <= 39.9){
+            categoria = "Obesidade 1."
+        } else if(imc >= 40){
+            categoria = "Obesidade 2."
+        }
+
+
+        document.write("Processo completo senhor(a) "+usuario+", seu imc é de: "+imc.toFixed(2)+", sua categoria de peso é: "+categoria)
         
     </script>
 </body>
