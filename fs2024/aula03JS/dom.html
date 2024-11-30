@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    </style>
+    <button onclick="tema()">Cliqa-se aqui</button>
+    <h1>DOM</h1>
+    <script>
+
+        
+
+        function temaLight(){
+            const pagina = document.querySelector('body')
+            pagina.style.background = 'white'
+            pagina.style.color = 'black'
+        }
+
+        function temaDark(){
+            const pagina = document.querySelector('body')
+            pagina.style.background = 'black'
+            pagina.style.color = 'white'
+        }
+
+        let DefaultTema = 'light'
+        function tema(){
+            if(DefaultTema === 'light'){
+                DefaultTema = 'dark'
+                temaDark()
+            }else{
+                DefaultTema = 'light'
+                temaLight()
+            }
+        }
+    </script>
+</body>
+</html>

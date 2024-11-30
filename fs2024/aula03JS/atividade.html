@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Adicionando o link do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Formulário com classes do Bootstrap -->
+        <h2>Somar Dois Números</h2>
+        <form>
+            <div class="form-group">
+                <label for="num1">Primeiro Número</label>
+                <input type="number" class="form-control" id="num1" placeholder="Digite o primeiro número">
+            </div>
+            <div class="form-group">
+                <label for="num2">Segundo Número</label>
+                <input type="number" class="form-control" id="num2" placeholder="Digite o segundo número">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="soma()">Soma</button>
+            <button type="button" class="btn btn-primary" onclick="subtracao()">Subtração</button>
+            <button type="button" class="btn btn-primary" onclick="multiplicacao()">Multiplicação</button>
+            <button type="button" class="btn btn-primary" onclick="divisao()">Divisão</button>
+        </form>
+
+        <!-- Resultado da soma -->
+        <div id="resultado" class="alert alert-success mt-3" style="display: none;"></div>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function soma(){
+            const value1 = document.getElementById('num1');
+            const value2 = document.getElementById('num2');
+            let n1 = Number(value1.value);
+            let n2 = Number(value2.value);
+            let resultado = n1 + n2;
+            const divResultado = document.getElementById('resultado');
+            
+            if (!isNaN(resultado)) {
+                divResultado.innerHTML = `Resultado da soma: ${resultado}`;
+                divResultado.style.display = 'block';
+            } else {
+                divResultado.innerHTML = 'Por favor, insira números válidos!';
+                divResultado.classList.remove('alert-success');
+                divResultado.classList.add('alert-danger');
+                divResultado.style.display = 'block';
+            }
+        }
+        
+        function subtracao(){
+            const value1 = document.getElementById('num1');
+            const value2 = document.getElementById('num2');
+            let n1 = Number(value1.value);
+            let n2 = Number(value2.value);
+            let resultado = n1 - n2;
+            const divResultado = document.getElementById('resultado');
+            
+            if (!isNaN(resultado)) {
+                divResultado.innerHTML = `Resultado da subtração: ${resultado}`;
+                divResultado.style.display = 'block';
+            } else {
+                divResultado.innerHTML = 'Por favor, insira números válidos!';
+                divResultado.classList.remove('alert-success');
+                divResultado.classList.add('alert-danger');
+                divResultado.style.display = 'block';
+            }
+            
+        }
+
+        function multiplicacao(){
+            const value1 = document.getElementById('num1');
+            const value2 = document.getElementById('num2');
+            let n1 = Number(value1.value);
+            let n2 = Number(value2.value);
+            let resultado = n1 * n2;
+            const divResultado = document.getElementById('resultado');
+            
+            if (!isNaN(resultado)) {
+                divResultado.innerHTML = `Resultado da multiplicação: ${resultado}`;
+                divResultado.style.display = 'block';
+            } else {
+                divResultado.innerHTML = 'Por favor, insira números válidos!';
+                divResultado.classList.remove('alert-success');
+                divResultado.classList.add('alert-danger');
+                divResultado.style.display = 'block';
+            }
+            
+        }
+
+        function divisao(){
+            const value1 = document.getElementById('num1');
+            const value2 = document.getElementById('num2');
+            let n1 = Number(value1.value);
+            let n2 = Number(value2.value);
+            let resultado = n1 / n2;
+            const divResultado = document.getElementById('resultado');
+            
+            if (!isNaN(resultado)) {
+                divResultado.innerHTML = `Resultado da divisão: ${resultado}`;
+                divResultado.style.display = 'block';
+            } else {
+                divResultado.innerHTML = 'Por favor, insira números válidos!';
+                divResultado.classList.remove('alert-success');
+                divResultado.classList.add('alert-danger');
+                divResultado.style.display = 'block';
+            }
+            
+        }
+    </script>
+</body>
+</html>
