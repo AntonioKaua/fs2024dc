@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Listagem</title>
+</head>
+<body>
+    <a href="form_cadastro.html">Novo Registro</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listagem">  
+        </tbody>
+    </table>
+    <script>
+        // Função para listar os dados armazenados no localStorage
+        function listarDados() {
+            const JsonLista = localStorage.getItem('lista');
+            if (JsonLista != null) {
+                const alunos = JSON.parse(JsonLista); // Corrigido: JSON.parse
+                const tbody = document.querySelector('#listagem');
+                tbody.innerHTML = ''; // Limpa a tabela antes de listar novamente
+                
+                alunos.map((item, posicao) => {
+                    const linha = `
+                        <tr>
+                            <td>${posicao}</td>
+                            <td>${item.nome}</td>
+                            <td>${item.email}</td>
+                            <td>
+                                <button onclick='excluirItem(${posicao})'>Excluir</button> <!-- Corrigido -->
+                            </td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += linha;
+                });
+            }
+        }
+
+        // Função para excluir um item da lista
+        function excluirItem(posicao) {
+            const JsonLista = localStorage.getItem('lista');
+            if (JsonLista != null) {
+                const alunos = JSON.parse(JsonLista); // Corrigido: JSON.parse
+                alunos.splice(posicao, 1); // Remove o aluno da lista pela posição
+                localStorage.setItem('lista', JSON.stringify(alunos)); // Atualiza o localStorage com a lista modificada
+                listarDados(); // Atualiza a listagem na tela
+            }
+        }
+
+        listarDados(); // Chama a função para listar os dados quando a página for carregada
+    </script>
+</body>
+</html>

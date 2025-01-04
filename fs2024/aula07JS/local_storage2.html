@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white p-4 sticky top-0 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Meu Portfólio</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#hero" class="hover:text-teal-400">Início</a></li>
+                    <li><a href="#about" class="hover:text-teal-400">Sobre</a></li>
+                    <li><a href="#projects" class="hover:text-teal-400">Projetos</a></li>
+                    <li><a href="#contact" class="hover:text-teal-400">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-teal-500 text-white text-center py-20">
+        <h2 class="text-4xl font-bold mb-4">Bem-vindo ao meu Portfólio</h2>
+        <p class="text-lg">Eu sou um Desenvolvedor Web focado em criar experiências incríveis.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Sobre Mim</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto">
+                Sou um desenvolvedor apaixonado por criar soluções digitais criativas e eficazes.
+                Tenho experiência em várias tecnologias modernas, incluindo Tailwind CSS.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Meus Projetos</h2>
+            <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Os projetos serão inseridos aqui pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Contato</h2>
+            <form id="contact-form" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <input type="text" id="name" placeholder="Seu Nome" 
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-teal-500">
+                </div>
+                <div class="mb-4">
+                    <input type="email" id="email" placeholder="Seu Email" 
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-teal-500">
+                </div>
+                <div class="mb-4">
+                    <textarea id="message" placeholder="Sua Mensagem" 
+                        class="w-full p-3 border border-gray-300 rounded focus:outline-teal-500"></textarea>
+                </div>
+                <button type="submit" class="bg-teal-500 text-white px-6 py-2 rounded hover:bg-teal-600">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white text-center py-4">
+        <p>© 2025 Meu Portfólio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Dados dos projetos
+        const projects = [
+            { title: "Projeto 1", description: "Descrição do projeto 1." },
+            { title: "Projeto 2", description: "Descrição do projeto 2." },
+            { title: "Projeto 3", description: "Descrição do projeto 3." },
+        ];
+
+        // Renderizar projetos
+        const projectsContainer = document.getElementById("projects-container");
+        projects.forEach(project => {
+            const projectCard = `
+                <div class="bg-white shadow p-6 rounded">
+                    <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                    <p class="text-gray-700">${project.description}</p>
+                </div>
+            `;
+            projectsContainer.innerHTML += projectCard;
+        });
+
+        // Formulário de Contato
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                alert(`Obrigado, ${name}! Sua mensagem foi enviada.`);
+                contactForm.reset();
+            } else {
+                alert("Por favor, preencha todos os campos.");
+            }
+        });
+    </script>
+</body>
+</html>

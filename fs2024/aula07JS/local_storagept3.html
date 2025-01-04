@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="AdicionarItem()">ADD item</button>
+    <script>
+        function AdicionarItem() {
+            const token = prompt("Adicione um token novo")
+            const valor = prompt("Adicione um valor para o token")
+            localStorage.setItem(token, valor)
+            alert("Token cadastrado com sucesso")
+        }
+
+        const aluno = {nome: "Jennifer", sobrenome:"Oliveira", idade:"24"}
+        const objeto_aluno = JSON.stringify(aluno)
+        localStorage.setItem('token', objeto_aluno)
+        const objeto_modificado = JSON.parse(objeto_aluno)
+        console.log(objeto_modificado)
+    </script>
+</body>
+</html>
