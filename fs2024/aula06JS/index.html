@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lista = [
+            "Ana", "Jennifer", "Anne"
+        ]
+        for(let indice = 0; indice < lista.length; indice++){
+            document.write(lista[indice]+"<br />")
+        }
+
+        const carros = ["Opala", "Uno", "Celta", "Corsa", "Corolla", "Civic"];
+
+        carros.forEach(
+            (nome, posicao)=>{document.write(posicao + ' - ' + nome +"<br />")}
+        )
+
+        carros.forEach((v, i, a)=>{
+            document.write(v + " - ")
+            document.write(i + " - ")
+            document.write(a + " <br /> ")
+        })
+    </script>
+
+</body>
+</html>
